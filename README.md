@@ -14,5 +14,6 @@
 
 [设置代理](./git/proxy/README.md)
 [初始化](./git/init/README.md)
+[状态](./git/status/README.md)
 [分支](./git/branch/README.md)
 [TAG](./git/tag/README.md)
