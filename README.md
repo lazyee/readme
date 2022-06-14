@@ -11,3 +11,8 @@
 [查找替换](./vim/查找替换/README.md)  
 
 <font style="font-size:25px">git</font>
+
+[设置代理](./git/proxy/README.md)
+[初始化](./git/init/README.md)
+[分支](./git/branch/README.md)
+[TAG](./git/tag/README.md)
