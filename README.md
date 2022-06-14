@@ -1,7 +1,7 @@
 
 <font style="font-size:25px">Flutter</font>
 
-[Flutter多版本切换](./flutter/flutter多版本切换/README.md)  
+[多版本切换](./flutter/flutter多版本切换/README.md)  
 
 <font style="font-size:25px">vim</font>
 
