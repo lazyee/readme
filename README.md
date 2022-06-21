@@ -22,3 +22,6 @@
 [状态](./git/status/README.md)  
 [分支](./git/branch/README.md)  
 [TAG](./git/tag/README.md)  
+
+<font style="font-size:25px">python</font>
+[pyenv相关配置](./python/pyenv/README.md)
