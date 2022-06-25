@@ -25,3 +25,8 @@
 
 <font style="font-size:25px">python</font>
 [pyenv相关配置](./python/pyenv/README.md)
+
+<font style="font-size:25px">ffmpeg</font>
+[ffmpeg](./ffmpeg/ffmpeg/README.md)
+[ffprobe](./ffmpeg/ffmpeg/README.md)
+[ffplay](./ffmpeg/ffmpeg/README.md)
