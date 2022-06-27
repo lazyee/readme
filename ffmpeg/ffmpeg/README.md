@@ -39,6 +39,8 @@ ffmpeg -i input.mp3 outpit.wav
 ### 提取一个通道并重采样
 ```shell
 ffmpeg -i input.wav -ac 1 -ar 16000 output.wav
+
+ffmpeg -loglevel quiet -i input.mp3  -acodec pcm_s16le -ar 8000 -ab 16k -ac 1 output.wav
 ```
 ### 修改采样精度（位数）
 ```shell
