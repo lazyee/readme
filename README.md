@@ -30,3 +30,4 @@
 [ffmpeg](./ffmpeg/ffmpeg/README.md)
 [ffprobe](./ffmpeg/ffmpeg/README.md)
 [ffplay](./ffmpeg/ffmpeg/README.md)
+[ffmpeg compile](./ffmpeg/compile/README.md)
