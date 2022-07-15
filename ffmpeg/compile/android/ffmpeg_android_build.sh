@@ -69,7 +69,41 @@ function ffmpegc
     --disable-decoders \
     --enable-decoder=mp3 \
     --enable-decoder=aac \
+    --enable-decoder=pcm_alaw \
+    --enable-decoder=pcm_alaw_at \
+    --enable-decoder=pcm_bluray \
+    --enable-decoder=pcm_dvd \
+    --enable-decoder=pcm_f16le \
+    --enable-decoder=pcm_f24le \
+    --enable-decoder=pcm_f32be \
+    --enable-decoder=pcm_f32le \
+    --enable-decoder=pcm_f64be \
+    --enable-decoder=pcm_lxf \
+    --enable-decoder=pcm_f64le \
+    --enable-decoder=pcm_s16be \
+    --enable-decoder=pcm_s16be_planar \
     --enable-decoder=pcm_s16le \
+    --enable-decoder=pcm_s16le_planar \
+    --enable-decoder=pcm_s24be \
+    --enable-decoder=pcm_s24daud \
+    --enable-decoder=pcm_s24le \
+    --enable-decoder=pcm_s24le_planar \
+    --enable-decoder=pcm_s32be \
+    --enable-decoder=pcm_s32le \
+    --enable-decoder=pcm_s32le_planar \
+    --enable-decoder=pcm_s64be \
+    --enable-decoder=pcm_s64le \
+    --enable-decoder=pcm_s8 \
+    --enable-decoder=pcm_s8_planar \
+    --enable-decoder=pcm_sga \
+    --enable-decoder=pcm_u16be \
+    --enable-decoder=pcm_u16le \
+    --enable-decoder=pcm_u24be \
+    --enable-decoder=pcm_u24le \
+    --enable-decoder=pcm_u32be \
+    --enable-decoder=pcm_u32le \
+    --enable-decoder=pcm_u8 \
+    --enable-decoder=pcm_vidc \
     --disable-encoders \
     --enable-encoder=pcm_s16le \
     --disable-bsfs \
@@ -139,7 +173,6 @@ ffmpegc
 
 # FFmpeg-android的configuration
 # configuration: --target-os=linux --cross-prefix=/root/bravobit/ffmpeg-android/toolchain-android/bin/i686-linux-android- --arch=x86 --cpu=i686 --enable-runtime-cpudetect --sysroot=/root/bravobit/ffmpeg-android/toolchain-android/sysroot --disable-asm --enable-pic --enable-libx264 --enable-libfreetype --enable-libmp3lame --enable-libvorbis --enable-libvpx --enable-libopus --enable-pthreads --enable-libass --enable-libfribidi --enable-fontconfig --enable-libfdk-aac --disable-debug --enable-version3 --enable-hardcoded-tables --disable-ffplay --disable-linux-perf --disable-doc --disable-shared --enable-static --enable-runtime-cpudetect --enable-nonfree --enable-network --enable-avresample --enable-avformat --enable-avcodec --enable-indev=lavfi --enable-hwaccels --enable-ffmpeg --enable-zlib --enable-gpl --enable-small --enable-nonfree --disable-asm --pkg-config=pkg-config --pkg-config-flags=--static --prefix=/root/bravobit/ffmpeg-android/build/x86 --extra-cflags='-I/root/bravobit/ffmpeg-android/toolchain-android/include -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-strict-overflow -fstack-protector-all -march=i686' --extra-ldflags='-L/root/bravobit/ffmpeg-android/toolchain-android/lib -Wl,-z,relro -Wl,-z,now -pie' --extra-cxxflags=
-
 
     # --enable-parser=ac3 \
     # --enable-parser=dvaudio \
