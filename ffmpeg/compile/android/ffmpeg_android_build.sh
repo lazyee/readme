@@ -11,8 +11,8 @@
 # https://github.com/bravobit/FFmpeg-Android
 # 这里只编译了x86和arm,所以我们这里也只编译这两个架构的ffmpeg即可
 
-# 目标Android版本
-API=28
+# 目标Android版本,这里的API以项目中minSdkVersion为准,否则会导致低版本的手机运行失败
+API=21
 #NDK路径
 NDK=/Users/leeorz/Documents/android_ndk/android-ndk-r21d
 #FFMPEG源码路径
@@ -44,6 +44,8 @@ function ffmpegc
     --cpu=$CPU \
     --cross-prefix=$CXX \
     --cc=$CC \
+    --disable-asm \
+    --disable-logging \
     --enable-cross-compile \
     --disable-securetransport \
     --disable-shared \
@@ -111,17 +113,32 @@ CXX="$TOOLCHAIN/bin/$ARCH-linux-android-"
 OPTIMIZE_CFLAGS="-march=$CPU"
 ffmpegc
 
-#编译x86_64
-ARCH=x86_64
-CPU=x86-64
-TOOL_CPU_NAME=x86_64
+# #编译x86_64
+# ARCH=x86_64
+# CPU=x86-64
+# TOOL_CPU_NAME=x86_64
+# #输出目录
+# OUTPUT="$SOURCE_PATH/$BUILD_DIR_NAME/$ARCH"
+# TOOL_PREFIX="$TOOLCHAIN/bin/$TOOL_CPU_NAME-linux-android"
+# CC="$TOOLCHAIN/bin/$ARCH-linux-android$API-clang"
+# CXX="$TOOLCHAIN/bin/$ARCH-linux-android-"
+# OPTIMIZE_CFLAGS="-march=$CPU"
+# ffmpegc
+
+#编译x86 32位
+ARCH=x86
+CPU=i686
+TOOL_CPU_NAME=i686
 #输出目录
 OUTPUT="$SOURCE_PATH/$BUILD_DIR_NAME/$ARCH"
 TOOL_PREFIX="$TOOLCHAIN/bin/$TOOL_CPU_NAME-linux-android"
-CC="$TOOLCHAIN/bin/$ARCH-linux-android$API-clang"
-CXX="$TOOLCHAIN/bin/$ARCH-linux-android-"
+CC="$TOOLCHAIN/bin/$CPU-linux-android$API-clang"
+CXX="$TOOLCHAIN/bin/$CPU-linux-android-"
 OPTIMIZE_CFLAGS="-march=$CPU"
 ffmpegc
+
+# FFmpeg-android的configuration
+# configuration: --target-os=linux --cross-prefix=/root/bravobit/ffmpeg-android/toolchain-android/bin/i686-linux-android- --arch=x86 --cpu=i686 --enable-runtime-cpudetect --sysroot=/root/bravobit/ffmpeg-android/toolchain-android/sysroot --disable-asm --enable-pic --enable-libx264 --enable-libfreetype --enable-libmp3lame --enable-libvorbis --enable-libvpx --enable-libopus --enable-pthreads --enable-libass --enable-libfribidi --enable-fontconfig --enable-libfdk-aac --disable-debug --enable-version3 --enable-hardcoded-tables --disable-ffplay --disable-linux-perf --disable-doc --disable-shared --enable-static --enable-runtime-cpudetect --enable-nonfree --enable-network --enable-avresample --enable-avformat --enable-avcodec --enable-indev=lavfi --enable-hwaccels --enable-ffmpeg --enable-zlib --enable-gpl --enable-small --enable-nonfree --disable-asm --pkg-config=pkg-config --pkg-config-flags=--static --prefix=/root/bravobit/ffmpeg-android/build/x86 --extra-cflags='-I/root/bravobit/ffmpeg-android/toolchain-android/include -U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -fno-strict-overflow -fstack-protector-all -march=i686' --extra-ldflags='-L/root/bravobit/ffmpeg-android/toolchain-android/lib -Wl,-z,relro -Wl,-z,now -pie' --extra-cxxflags=
 
 
     # --enable-parser=ac3 \
