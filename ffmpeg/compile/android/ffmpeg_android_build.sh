@@ -132,7 +132,7 @@ function ffmpegc
     make clean all
     #这里是定义用几个CPU编译
     make -j8
-    make install
+    # make install
 }
 
 #编译arm
