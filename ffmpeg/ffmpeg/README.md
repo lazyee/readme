@@ -97,3 +97,9 @@ ffmpeg -y -i input.wav -ac 1 -ar 16000 -vn output.wav
 # 导出全部
 ffmpeg -y -i xxxxx.mp3 --ar 8000 -f s16le xxxxx_cut.mp3
 ```
+
+### GIF
+```shell
+ffmpeg -i input.mp4 -s 640:360 output.gif
+```
+-s: 设置输出size
