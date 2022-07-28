@@ -5,8 +5,9 @@ ffmpeg -i input.mp4 -ss 00:00:00 -t 00:03:00 -vcodec copy -acodec copy output.mp
 ```
 对视频进行原样输出(非常非常非常非常非常非常慢,但是不会有问题)
 ```shell
-ffmpeg -i input.mp4 -ss 00:00:00 -t 00:03:00 output.mp4
+ffmpeg -i input.mp4 -ss 00:00:00 -t 00:03:00 -vcodec copy -b:v 0 output.mp4
 ```
+-vcodec copy -b:v 0 保证剪切出来的视频分辨率不会变化
 ### 移除视频水印
 ffmpeg的去处水印并不是完整去除,而是对其进行涂抹
 ### 抽取视频图片
