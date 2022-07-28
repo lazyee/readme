@@ -1,3 +1,12 @@
+### ffmpeg 常用参数参数
+|参数|描述|取值|
+|:--|:--|:--|
+|-ss |指定了视频的时分秒|hh:mm:ss.0 or 100.1(秒数)|
+|-i |指定输入文件的路径|/xxx/yyy.mp3|
+|-y |输出文件默认覆盖|-|
+|-vn|表示vedio not，即输出不包含视频|-|
+|-t |持续时间|hh:mm:ss.0 or 100.1(秒数)|
+|-to| 到小时：分：秒.毫秒 处截止|hh:mm:ss.0 or 100.1(秒数)|
 ### 剪切视频
 对视频进行原样输出(这种方式可能存在开头卡住和结尾花屏的问题,但是速度较快)
 ```shell
@@ -8,6 +17,7 @@ ffmpeg -i input.mp4 -ss 00:00:00 -t 00:03:00 -vcodec copy -acodec copy output.mp
 ffmpeg -i input.mp4 -ss 00:00:00 -t 00:03:00 -vcodec copy -b:v 0 output.mp4
 ```
 -vcodec copy -b:v 0 保证剪切出来的视频分辨率不会变化
+
 ### 移除视频水印
 ffmpeg的去处水印并不是完整去除,而是对其进行涂抹
 ### 抽取视频图片
@@ -16,8 +26,6 @@ ffmpeg的去处水印并不是完整去除,而是对其进行涂抹
 ffmpeg -ss hh:mm:ss -i input.mp4 -vframes 1 output.jpg
 ```
 ###### 参数
-    -ss 指定了视频的时分秒，
-    -i 指定输入文件，
     -vframes 1 表示视频的第一帧。
 上述指令，会自动选取最接近设定时间点的位置，并执行截屏。这个速度非常快。
 当然也可以使用 -q:v 1，用于指定在时间点附近，选取图像质量最高的那一张。
@@ -45,24 +53,16 @@ ffmpeg -i input.mp4 -vf "select='eq(pict_type,PICT_TYPE_I)'" -vsync vfr image_%d
 ```shell
 ffmpeg -i xxxxx.mp4 -f mp3 -vn xxxxx.mp3
 ```
--i 表示input，即输入文件
--f 表示format，即输出格式
--vn表示vedio not，即输出不包含视频
+###### 参数
+    -f 表示format，即输出格式
 
 ### 剪切音频
 ```shell
 ffmpeg -y -ss 00:00:00.0 -to 00:00:00.0 -i xxxxx.mp3 -vn -acodec copy xxxxx_cut.mp3
 ```
--ss 从 小时：分：秒 处开始切割 
--t 持续时间
--to 到小时：分：秒.毫秒 处截止
--ac 1 设置声道数为1
--ar 48000 设置采样率为48000Hz
-
-### 查看音频格式：
-```shell
-ffprobe input.wav
-```
+###### 参数
+    -ac 1 设置声道数为1
+    -ar 48000 设置采样率为48000Hz
 
 ###  修改音频文件采样率：
 ```shell
