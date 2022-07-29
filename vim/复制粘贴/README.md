@@ -8,3 +8,4 @@
 删除光标选中的内容
 ##### 粘贴 p
 配合`yy`,`y`来使用,在按下`yy`,`y`之后再在指定位置输入`p`即可,在`yy`+`p`会将当前复制内容插入下一行
+<!-- apk_path = "/Users/leeorz/.pyenv/versions/2.7.18/lib/python2.7/site-packages/drozer/modules/common/ZipUtil.apk" -->

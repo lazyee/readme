@@ -12,7 +12,7 @@
 ```shell
 ffmpeg -i input.mp4 -ss 00:00:00 -t 00:03:00 -vcodec copy -acodec copy output.mp4
 ```
-对视频进行原样输出(非常非常非常非常非常非常慢,但是不会有问题)
+对视频进行原样输出(非常非常非常非常非常非常慢,重编码)
 ```shell
 ffmpeg -i input.mp4 -ss 00:00:00 -t 00:03:00 -vcodec copy -b:v 0 output.mp4
 ```
