@@ -6,7 +6,7 @@
 
 
 #FFMPEG源码路径
-SOURCE_PATH=/Users/leeorz/Downloads/ffmpeg
+SOURCE_PATH=/Users/leeorz/Documents/ffmpeg/source/ffmpeg
 BUILD_DIR_NAME=ffmpeg_mac_build
 OUTPUT="$SOURCE_PATH/$BUILD_DIR_NAME"
 cd $SOURCE_PATH
@@ -69,7 +69,7 @@ function ffmpegc
     make clean all
     #这里是定义用几个CPU编译
     make -j8
-    # make install
+    make install
 }
 
 ffmpegc
