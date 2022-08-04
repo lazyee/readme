@@ -13,10 +13,12 @@
 
 # 目标Android版本,这里的API以项目中minSdkVersion为准,否则会导致低版本的手机运行失败
 API=21
-#NDK路径
-NDK=/Users/leeorz/Documents/android_ndk/android-ndk-r21d
+#自己下载的NDK路径
+# NDK=/Users/leeorz/Documents/android_ndk/android-ndk-r21d
+# Android Studio下载的NDK路径
+NDK=/Users/leeorz/Library/Android/sdk/ndk/21.4.7075529
 #FFMPEG源码路径
-SOURCE_PATH=/Users/leeorz/Downloads/ffmpeg
+SOURCE_PATH=/Users/leeorz/Documents/ffmpeg/source/ffmpeg
 # 编译工具链路径
 TOOLCHAIN=$NDK/toolchains/llvm/prebuilt/darwin-x86_64
 # 编译环境
@@ -132,7 +134,7 @@ function ffmpegc
     make clean all
     #这里是定义用几个CPU编译
     make -j8
-    # make install
+    make install
 }
 
 #编译arm
