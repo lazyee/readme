@@ -4,6 +4,9 @@
 # https://www.jianshu.com/p/f510823735fc
 # ndk 架构配置
 # https://blog.csdn.net/XieEDeHeiShou/article/details/112027189
+# 为 Android 编译 openssl 的注意事项
+# https://www.bilibili.com/read/cv17026966/
+# 修改 15-android.conf,将生成的so包移除版本后缀,位置在Configurations/15-android.conf中
 
 API=21
 #自己下载的NDK路径
