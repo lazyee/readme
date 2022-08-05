@@ -36,8 +36,8 @@ uname -a
 # ls -all
 echo "查看支持的CPU架构"
 ./Configure LIST | grep android
-
-
+echo "清空上次编译内容"
+make clean
 function opensslc
 {
     export ANDROID_NDK_HOME=$NDK
@@ -83,43 +83,64 @@ function opensslc
     --prefix=$OUTPUT \
     --openssldir=$OPENSSL_DIR \
 
-    #这里是定义用几个CPU编译
     make
     make install
 }
 
+# 查看支持的CPU架构
+# android-arm
+# android-arm64
+# android-armeabi
+# android-mips
+# android-mips64
+# android-x86
+# android-x86_64
+# android64
+# android64-aarch64
+# android64-mips64
+# android64-x86_64
+
+# 需要编译这5个架构so包
+# arm64-v8a
+# armeabi
+# armeabi-v7a
+# x86
+# x86_64
+
 # arch64-linux-android-4.9 llvm                      x86-4.9
 # arm-linux-androideabi-4.9 renderscript              x86_64-4.9
-#编译arm
+
+#编译arm64-v8a
+OUTPUT_DIR_NAME=arm64-v8a
 ARCH=android-arm64
-TOOLCHAIN=arm-linux-androideabi
+TOOLCHAIN=aarch64-linux-androideabi
 #输出目录
-OUTPUT="$SOURCE_PATH/$BUILD_DIR_NAME/$ARCH"
+OUTPUT="$SOURCE_PATH/$BUILD_DIR_NAME/$OUTPUT_DIR_NAME"
 opensslc
 
-# #编译x86_64
-# ARCH=android-x86_64
-# CPU=x86-64
-# TOOL_CPU_NAME=x86_64
-# #输出目录
-# OUTPUT="$SOURCE_PATH/$BUILD_DIR_NAME/$ARCH"
-# TOOL_PREFIX="$TOOLCHAIN/bin/$TOOL_CPU_NAME-linux-android"
-# CC="$TOOLCHAIN/bin/$ARCH-linux-android$API-clang"
-# CXX="$TOOLCHAIN/bin/$ARCH-linux-android-"
-# OPTIMIZE_CFLAGS="-march=$CPU"
-#opensslc
-
-# #编译x86 32位
-# ARCH=x86
-# CPU=i686
-# TOOL_CPU_NAME=i686
-# #输出目录
-# OUTPUT="$SOURCE_PATH/$BUILD_DIR_NAME/$ARCH"
-# TOOL_PREFIX="$TOOLCHAIN/bin/$TOOL_CPU_NAME-linux-android"
-# CC="$TOOLCHAIN/bin/$CPU-linux-android$API-clang"
-# CXX="$TOOLCHAIN/bin/$CPU-linux-android-"
-# OPTIMIZE_CFLAGS="-march=$CPU"
+# #编译armeabi-v7a
+# OUTPUT_DIR_NAME=armeabi-v7a
+# ARCH=android-arm
+# TOOLCHAIN=arm-linux-androideabi
+# # 输出目录
+# OUTPUT="$SOURCE_PATH/$BUILD_DIR_NAME/$OUTPUT_DIR_NAME"
 # opensslc
+
+# #编译x86_64
+# OUTPUT_DIR_NAME=x86_64
+# ARCH=android-x86_64
+# TOOLCHAIN=x86_64
+# # 输出目录
+# OUTPUT="$SOURCE_PATH/$BUILD_DIR_NAME/$OUTPUT_DIR_NAME"
+# opensslc
+
+# 编译x86 32位
+OUTPUT_DIR_NAME=x86
+ARCH=android-x86
+TOOLCHAIN=x86
+# 输出目录
+OUTPUT="$SOURCE_PATH/$BUILD_DIR_NAME/$OUTPUT_DIR_NAME"
+opensslc
 
     # no-async \
     # no-md2 \
