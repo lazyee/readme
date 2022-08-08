@@ -4,7 +4,7 @@ void packageAAR(project,android,name){
         //自定义aar名称
         variant.outputs.all{
             def currentTime = new Date().format("yyyyMMddHHmmss",TimeZone.getDefault())
-            def aarName = "${name}_${currentTime}_V${android.defaultConfig.versionName}"
+            def aarName = "${name}_${currentTime}_v${android.defaultConfig.versionName}"
             if (variant.buildType.name == 'debug') {
                 aarName +=  "_debug"
             }
