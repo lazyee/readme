@@ -22,7 +22,7 @@
 [状态](./git/status/README.md)  
 [分支](./git/branch/README.md)  
 [TAG](./git/tag/README.md)  
-[还原到某次提交](./git/reset/README.md)
+[重置到某次提交](./git/reset/README.md)
 
 <font style="font-size:25px">python</font>
 [pyenv相关配置](./python/pyenv/README.md)
