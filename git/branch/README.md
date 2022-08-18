@@ -6,6 +6,13 @@ git branch
 ```shell
 git branch -m oldName newName
 ```
+###### 修改远程分支名
+```shell
+git branch -m oldName newName
+git push origin :oldName
+git push --set-upstream origin newName
+```
+
 ###### 切换分支
 ```shell
 git checkout xxxx
