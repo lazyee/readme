@@ -6,3 +6,17 @@ adb devices -l
 ```shell
 adb nodaemon server
 ```
+### adb连接指定设备
+```shell
+adb -s xxxxxx shell
+```
+
+### adb拉取文件
+```shell
+adb -s xxxxxxx pull /storage/self/primary/xxxxx.txt /Users/xxxx/Desktop
+```
+
+### adb推送文件
+```shell
+adb -s xxxxxxx push /Users/xxxx/Documents/xxxxx.mp3 /storage/emulated/0
+```
