@@ -18,6 +18,11 @@ ffmpeg -i input.mp4 -ss 00:00:00 -t 00:03:00 -vcodec copy -b:v 0 output.mp4
 ```
 -vcodec copy -b:v 0 保证剪切出来的视频分辨率不会变化
 
+### 拼接音频
+```shell
+ffmpeg -i "concat:xxxx.mp3|yyyy.mp3" -acodec copy output.mp3
+```
+
 ### 移除视频水印
 ffmpeg的去处水印并不是完整去除,而是对其进行涂抹
 ### 抽取视频图片
