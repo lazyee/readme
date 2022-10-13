@@ -108,3 +108,8 @@ ffmpeg -y -i xxxxx.mp3 --ar 8000 -f s16le xxxxx_cut.mp3
 ffmpeg -i input.mp4 -s 640:360 output.gif
 ```
 -s: 设置输出size
+
+### 转换成DVD的视频
+```shell
+ffmpeg -i clip.mp4 -f dvd -target ntsc-dvd -r 30000/1001 -vf scale=720:480 -aspect 16:9 -vb 8000k -g 12 -mbd rd -trellis 1 -flags +mv0 -cmp 0 -subcmp 2 clip.mpg
+```
