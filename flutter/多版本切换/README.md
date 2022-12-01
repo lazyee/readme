@@ -20,4 +20,4 @@ alias flutter_switch_stable='export PATH=`echo $PATH | sed -e "s/${FLUTTER_HOME/
 alias flutter_switch_2_10_5='export PATH=`echo $PATH | sed -e "s/${FLUTTER_HOME//\//\\/}/${FLUTTER_2_10_5_HOME//\//\\/}/g"`;export FLUTTER_HOME=${FLUTTER_2_10_5_HOME};'
 ```
 #### 2. vscode中配置settings.json
-![image](../flutter多版本切换/imgs/01.png)
+![image](./imgs/01.png)
