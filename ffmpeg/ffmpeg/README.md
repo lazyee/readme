@@ -113,5 +113,5 @@ ffmpeg -i input.mp4 -s 640:360 output.gif
 ```shell
 ffmpeg -i clip.mp4 -f dvd -target ntsc-dvd -r 30000/1001 -vf scale=720:480 -aspect 16:9 -vb 8000k -g 12 -mbd rd -trellis 1 -flags +mv0 -cmp 0 -subcmp 2 clip.mpg
 
-ffmxpeg -i input.mp4 -y -target pal-dvd -aspect 16:9 output.mpg
+ffmpeg -i input.mp4 -y -target pal-dvd -aspect 16:9 output.mpg
 ```
